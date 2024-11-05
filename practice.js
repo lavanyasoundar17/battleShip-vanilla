@@ -34,13 +34,6 @@ const coordinates = x_axis.flatMap((x) => y_axis.map((y) => ({x,y}))); // [{x: 0
 const player1PickingCoordinates = JSON.parse(JSON.stringify(coordinates));
 const player2PickingCoordinates = JSON.parse(JSON.stringify(coordinates));
 
-//util
-function parseCoordinate(coord) {
-    return {
-      row: convertAlphabetIndexToNumericIndex(coord.x), // Convert 'a' to 0, 'b' to 1, etc.
-      col: parseInt(coord.y, 10) - 1, // Convert '1' to 0, '2' to 1, etc.
-    };
-  }
 
 function createWaterBody(){
     return Array.from({length: x_axis.length}, () => Array.from({length: y_axis.length}, () => WaterBlockStatus.WATER));
